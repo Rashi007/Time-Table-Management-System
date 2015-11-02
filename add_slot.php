@@ -4,7 +4,7 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 //$fname=$_POST['fname'];
 include 'db_conn.php';
-$fname="'".$_POST['fname']."'";
+//$fname="'".$_POST['fname']."'";
 $cl_id="'".$_POST['Classroom']."'";
 $c_id="'".$_POST['Subject']."'";
 $day="'".$_POST['Day']."'";
@@ -12,16 +12,16 @@ $time="'".$_POST['Time']."'";
 $batch="'".$_POST['Batch']."'";
 $duration_form=$_POST['Duration'];
 if($duration_form==0){
-	echo "asdsad111111111111";
+	//echo "asdsad111111111111";
 }
 if($_POST['submit']=="Delete"){
-	echo "hiii";
+	//echo "hiii";
 	$sql="DELETE FROM Booking
 WHERE B_ID=$batch AND C_ID=$c_id AND Day=$day ";
 $result=mysqli_query($link,$sql);
 //$count=mysqli_num_rows($result);
 //$row = mysqli_fetch_assoc($result);
-	
+	include 'add_slot.html';
 	die();
 }
 $duration=1;
