@@ -1,3 +1,9 @@
+<html>
+<head>
+	<title>Timetable</title>
+	<link rel="stylesheet" type="text/css" href="mystyle.css">
+</head>
+</html>
 <?php
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
@@ -51,7 +57,6 @@ FROM Classroom,Day,Time
 WHERE NOT EXISTS (SELECT b.CL_ID,b.Day,b.Time
                  FROM Booking b
                  )*/
-
 //Strength CONSTRAINT
 $sql="SELECT Strength FROM Batch WHERE B_ID=$batch";
 $result=mysqli_query($link,$sql);
@@ -137,9 +142,7 @@ else{
 			<td>'.$row['Time'].'</td>
 			</tr>';
 			}
-
 			echo '</table></div>';
-
 			
 			die();
 		}
@@ -195,7 +198,6 @@ else{
 			<td>'.$row['Time'].'</td>
 			</tr>';
 			}
-
 			echo '</table></div>';
 			die();
 			
@@ -263,7 +265,6 @@ else{
 			<td>'.$row['Time'].'</td>
 			</tr>';
 			}
-
 			echo '</table></div>';
 			die();
 			
@@ -286,21 +287,6 @@ else{
 		$result = mysqli_query($link,$query);
 	}*/
 }
-
-
-
 /*
-
-
-
-
 */
-
-
-
 ?>
-
-
-
-
-
