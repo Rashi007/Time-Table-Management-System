@@ -1,0 +1,158 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Timetable</title>
+	<style type"text/css">
+	    body {
+				background-image:url(pic2.jpg);
+				background-repeat: no-repeat;
+				background-size: 1500px 900px;
+				color: #5a5656;
+				font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+				font-size: 16px;
+				line-height: 1.5em;
+			}
+		a { text-decoration: none; }
+		h1 { font-size: 1em; }
+		h1, p {
+				font-size: 3em
+				margin-bottom: 10px;
+			}
+		strong {
+				font-weight: bold;
+			}
+		.uppercase { text-transform: uppercase; }
+		#banner{
+				height:100px;
+				background-color:orange;
+				font-size: 210%;
+				font-family:"Comic Sans MS", cursive, sans-serif;
+				color:white;
+		}
+		.button-warning {
+				background-color:#52CCA3; /* this is an orange */
+				font-size: 110%;
+				font-family:"Comic Sans MS", cursive, sans-serif;
+				border-color:#52CCA3;
+				color:white;
+				-webkit-box-shadow: 0 0 4px rgba(0,0,0, .75);
+				-moz-box-shadow: 0 0 4px rgba(0,0,0, .75);
+				box-shadow: 0 0 4px rgba(0,0,0, .75);
+				-moz-border-radius: 10px;
+				-webkit-border-radius: 10px;
+				border-radius: 10px;
+				cursor:pointer; /*forces the cursor to change to a hand when the button is hovered*/
+				padding:5px 25px; /*add some padding to the inside of the button*/ 
+			}
+		.button-warning:hover, .button-warning:focus{
+				background-color:orange;
+				-webkit-box-shadow: 0 0 1px rgba(0,0,0, .75);
+				-moz-box-shadow: 0 0 1px rgba(0,0,0, .75);
+				box-shadow: 0 0 1px rgba(0,0,0, .75);
+				border-color:orange;
+				color:black;
+				-moz-text-shadow: 0 0 2px #000;
+				-webkit-text-shadow: 0 0 2px #000;
+				font-weight: bold;
+			}
+		
+		table input[type="text"]{
+			background-color: #e5e5e5;
+			font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+			font-size: 20px;
+			height: 30px;
+			outline: none;
+			padding: 0px 10px;
+			width: 140px;
+			-webkit-appearance:none;
+		}
+		table select[id="u"]{
+			background-color: #e5e5e5;
+			color: #5a5656;
+			font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+			font-size: 18px;
+			height: 30px;
+			outline: none;
+			padding: 0px 10px;
+			width: 140px;
+			-webkit-appearance:none;
+		}
+	</style>
+</head>
+<body>
+<div id="banner"><br>
+<h1 align="center">Time-Table Management System</h1><br><br><br><br><br>
+</div>
+<br>
+<table class="formin" border="0" height="500">
+<form action="add_slot.php" method="post"><tr>
+<td>Classroom:</td>
+<td><select id="u" name="Classroom">
+  <option value="CR101">CR101</option>
+  <option value="CR102">CR102</option>
+  <option value="CR103">CR103</option>
+  <option value="CR104">CR104</option>
+  <option value="CR107">CR107</option>
+  <option value="CC1">CC1</option>
+  <option value="CC2">CC2</option>
+  <option value="CR201">CR201</option>
+  <option value="CR202">CR202</option>
+  <option value="CR108">CR108</option>
+  <option value="CR109">CR109</option>
+  <option value="L201">L201</option>
+  <option value="L202">L202</option>
+  <option value="L107">L107</option>
+  <option value="L106">L106</option>
+  <option value="L102">L102</option>
+</select></td>
+<td>Subject:</td><td><input type="text" name="Subject"></td>
+<td>Batch:</td>
+<td><select id="u" name="Batch">
+  
+  <option value="2012">2012</option>
+  <option value="2012_CSE">2012_CSE</option>
+  <option value="2012_ECE">2012_ECE</option>
+  <option value="2012_MECH">2012_MECH</option>
+  <option value="2013">2013</option>
+  <option value="2013_CSE">2013_CSE</option>
+  <option value="2013_ECE">2013_ECE</option>
+  <option value="2013_MECH">2013_MECH</option>
+  <option value="2014">2014</option>
+  <option value="2014_CSE">2014_CSE</option>
+  <option value="2014_ECE">2014_ECE</option>
+  <option value="2014_MECH">2014_MECH</option>
+  
+  <option value="2015">2015</option>
+  <option value="2015_CSE">2015_CSE</option>
+  <option value="2015_ECE">2015_ECE</option>
+  <option value="2015_MECH">2015_MECH</option>
+</select></td>
+<td>Day:</td>
+<td><select id="u" name="Day">
+  <option value="MON">Monday</option>
+  <option value="TUE">Tuesday</option>
+  <option value="WED">Wednesday</option>
+  <option value="THU">Thursday</option>
+  <option value="FRI">Friday</option>
+</select></td>
+<td>Time:</td>
+<td><select id="u" name="Time">
+  <option value="9">9:00</option>
+  <option value="10">10:00</option>
+  <option value="11">11:00</option>
+  <option value="12">12:00</option>
+  <option value="13">13:00</option>
+  <option value="14.30">14:30</option>
+  <option value="15.30">15:30</option>
+  <option value="16.30">16:30</option>
+</select></td>
+<td>Duration:</td><td><input type="text" name="Duration"></td>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td align="center"><button name="submit" value="submit" class="button" style="color:#FFFFFF ">Add &raquo;</button></td>
+<td align="center"><button name="submit" value="Delete" class="button" style="color:#FFFFFF ">Delete &raquo;</button></td>
+
+
+</tr>
+</tr></form>
+</table>
+</body>
+</html>
